@@ -31,6 +31,11 @@ batching.
 `@joint/react` 4.3.0 → 4.3.1, leaves the other four untouched, and **merges /
 converges normally**.
 
+> **Note — `rangeStrategy` is scoped, not global.** It lives *inside* the
+> `@joint/*` `packageRule`, so it only affects the `@joint/*` scope. Every other
+> dependency in the project keeps Renovate's default per-manager strategy. Set it
+> at the top level of `renovate.json` only if you want it applied project-wide.
+
 ## How to run
 
 1. Push this repo to GitHub (already done if you're reading it there).

@@ -2,12 +2,12 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended"],
   "dependencyDashboard": true,
-  "rangeStrategy": "replace",
   "packageRules": [
     {
-      "description": "Batch all @joint/* runtime packages into ONE PR. groupName only — NOT registered as a monorepo, so members are allowed to sit at independent versions (react 4.3.1 while core 4.3.0) without the PR ever going 'immortal'.",
+      "description": "Batch all @joint/* runtime packages into ONE PR. groupName only — NOT registered as a monorepo, so members are allowed to sit at independent versions (react 4.3.1 while core 4.3.0) without the PR ever going 'immortal'. rangeStrategy scoped HERE so it only affects @joint/*, not every dependency in the project.",
       "matchPackageNames": ["/^@joint//"],
-      "groupName": "joint"
+      "groupName": "joint",
+      "rangeStrategy": "replace"
     }
   ]
 }
